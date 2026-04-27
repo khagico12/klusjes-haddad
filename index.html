@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KlusjesHaddad</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══ COOKIE POPUP ══ -->
+  <div id="cookie-overlay" class="cookie-overlay"></div>
+  <div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-inner">
+      <div class="cookie-icon">🍪</div>
+      <h3>COOKIES &amp; PRIVACY</h3>
+      <p>Deze website gebruikt cookies voor een optimale ervaring en om bij te houden welke klussen populair zijn.</p>
+      <div class="cookie-buttons">
+        <button id="cookie-accept" class="btn-primary">ACCEPTEREN</button>
+        <button id="cookie-decline" class="btn-ghost">WEIGEREN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PROJECT MODAL ══ -->
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-panel">
+
+      <button class="modal-close" id="modal-close" aria-label="Sluiten">
+        <span>✕</span> SLUITEN
+      </button>
+
+      <!-- Gekleurde header -->
+      <div class="modal-header" id="modal-header">
+        <div class="modal-header-glow" id="modal-header-glow"></div>
+        <div class="modal-header-content">
+          <div class="modal-tag-row" id="modal-tag-row"></div>
+          <h2 class="modal-title" id="modal-title"></h2>
+          <time class="modal-date" id="modal-date"></time>
+        </div>
+      </div>
+
+      <!-- Fotogalerij met echte foto's -->
+      <div class="modal-gallery">
+        <div class="gallery-main-wrap">
+          <img id="gallery-main-img" class="gallery-main-img" src="" alt="Project foto" />
+          <video id="gallery-main-video" class="gallery-main-video" controls style="display:none;"></video>
+          <button class="gallery-arrow gallery-arrow--left"  id="gallery-prev" aria-label="Vorige foto">&#8592;</button>
+          <button class="gallery-arrow gallery-arrow--right" id="gallery-next" aria-label="Volgende foto">&#8594;</button>
+          <div class="gallery-counter" id="gallery-counter">1 / 5</div>
+        </div>
+        <div class="gallery-thumbs" id="gallery-thumbs"></div>
+      </div>
+
+      <!-- Beschrijving + stappen -->
+      <div class="modal-body">
+        <div class="modal-col">
+          <h3 class="modal-col-label">// BESCHRIJVING</h3>
+          <div class="modal-desc" id="modal-desc"></div>
+
+          <h3 class="modal-col-label" style="margin-top:28px;">// MATERIALEN</h3>
+          <div class="modal-materials" id="modal-materials"></div>
+
+          <div class="modal-cta-row" id="modal-cta-row"></div>
+        </div>
+        <div class="modal-col">
+          <h3 class="modal-col-label">// AANPAK &amp; STAPPEN</h3>
+          <ol class="modal-steps" id="modal-steps"></ol>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span>🔨</span>
+        <span class="logo-text">Klusjes<em>Haddad</em></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home"      class="nav-link" data-section="home">HOME</a></li>
+        <li><a href="#projecten" class="nav-link" data-section="projecten">PROJECTEN</a></li>
+        <li><a href="#reviews"   class="nav-link" data-section="reviews">REVIEWS</a></li>
+        <li><a href="#over-mij"  class="nav-link" data-section="over-mij">WIE BEN IK?</a></li>
+        <li><a href="#contact"   class="nav-cta-btn">SOCIALS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section id="home" class="hero">
+    <div class="hero-tape" aria-hidden="true">VAKWERK · BETROUWBAAR · STERK · EERLIJKE PROJECTEN · VAKWERK · BETROUWBAAR · STERK · EERLIJKE PROJECTEN · VAKWERK · BETROUWBAAR · STERK · EERLIJKE PROJECTEN ·&nbsp;</div>
+    <div class="hero-content">
+      <div class="hero-tag">Eerlijke toning van projecten!</div>
+      <h1 class="hero-title">
+        <span class="title-line">YOUSSEF HADDAD</span>
+        <span class="title-line accent">EN MIJN KUNSTEN!</span>
+      </h1>
+      <p class="hero-subtitle">Van niets, maak ik IETS!</p>
+      <div class="hero-cta">
+        <a href="#projecten" class="btn-primary">BEKIJK MIJN WERK</a>
+        <a href="#over-mij"   class="btn-ghost">WIE BEN IK?</a>
+        <a href="#contact"   class="btn-ghost">SOCIALS</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">30+</span><span class="stat-label">JAAR ERVARING</span></div>
+        <div class="stat-divider">//</div>
+        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">PROJECTEN</span></div>
+        <div class="stat-divider">//</div>
+        <div class="stat"><span class="stat-num">5★</span><span class="stat-label">GEMIDDELD</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="toolbox">
+        <div class="tool t1">🔧</div>
+        <div class="tool t2">🪛</div>
+        <div class="tool t3">🔨</div>
+        <div class="tool t4">🪚</div>
+        <div class="tool t5">⚙️</div>
+        <div class="tool-center">KH</div>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+    </div>
+  </section>
+
+  <!-- DIENSTEN BALK -->
+  <div class="services-bar" aria-hidden="true">
+    <div class="services-inner">
+      <span class="service-tag">🪵 Timmerwerk</span>
+      <span class="service-tag">🎨 Schilderwerk</span>
+      <span class="service-tag">🔌 Elektra</span>
+      <span class="service-tag">🚿 Sanitair</span>
+      <span class="service-tag">✨ Reinigen</span>
+      <span class="service-tag">🚧 Omheiningen</span>
+      <span class="service-tag">🪵 Timmerwerk</span>
+      <span class="service-tag">🎨 Schilderwerk</span>
+      <span class="service-tag">🔌 Elektra</span>
+      <span class="service-tag">🚿 Sanitair</span>
+      <span class="service-tag">✨ Reinigen</span>
+      <span class="service-tag">🚧 Omheiningen</span>
+    </div>
+  </div>
+
+  <!-- ══ PROJECTEN ══ -->
+  <section id="projecten" class="projects">
+    <div class="section-header">
+      <div class="section-tag">klusjes-Haddad</div>
+      <h2 class="section-title">MIJN PROJECTEN</h2>
+      <div class="section-line"></div>
+      <p class="section-hint">Bekijk ze, met gerust! Om het gedetailleerd te zien moet je drukken op één van de projecten om foto's en de stappen te zien.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card" data-project="badkamer" tabindex="0" role="button" aria-label="Bekijk badkamer project">
+        <div class="open-hint">▶ BEKIJK PROJECT</div>
+        <div class="card-index">01</div>
+        <div class="card-image">
+          <img src="0.1FotoTubnail.jpeg" alt="Badkamer renovatie" loading="lazy" />
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag--orange">Hout</span>
+            <span class="tag tag--green">Buiten</span>
+          </div>
+          <h3 class="card-title">De bouw van de boomhut (cabit)</h3>
+          <p class="card-desc">FotoTubnail.jpeg</p>
+          <div class="card-meta"><span>📍 Kortrijk</span><span>⏱ 7 dagen</span></div>
+          <span class="card-link">BEKIJK FOTO'S <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="veranda" tabindex="0" role="button" aria-label="Bekijk veranda project">
+        <div class="open-hint">▶ BEKIJK PROJECT</div>
+        <div class="card-index">02</div>
+        <div class="card-image">
+          <img src="2.0BezigPlankenZetten.jpeg" alt="Houten veranda" loading="lazy" />
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag--orange">Hout</span>
+            <span class="tag tag--green">Buiten</span>
+          </div>
+          <h3 class="card-title">Houten Tuinhuis</h3>
+          <p class="card-desc">Het plaatsen van een beton. Daarop het tuinhuis bouwen en een eigen vloer leggen binnenin.</p>
+          <div class="card-meta"><span>📍 Kortrijk</span><span>⏱ 5 dagen</span></div>
+          <span class="card-link">BEKIJK FOTO'S <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="schilderwerk" tabindex="0" role="button" aria-label="Bekijk schilderwerk project">
+        <div class="open-hint">▶ BEKIJK PROJECT</div>
+        <div class="card-index">03</div>
+        <div class="card-image">
+          <img src="einde.jpeg" alt="Schilderwerk buiten" loading="lazy" />
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag--orange">Hout</span>
+            <span class="tag tag--green">Buiten</span>
+            <span class="tag tag--amber">Omheining</span>
+          </div>
+          <h3 class="card-title">Omheining tand & groef</h3>
+          <p class="card-desc">Het plaatsen van een volledige omheining met betonpalen, betonarduinen en tand en groef planken.</p>
+          <div class="card-meta"><span>📍 Kortrijk</span><span>⏱ 5 dagen</span></div>
+          <span class="card-link">BEKIJK FOTO'S <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="project-card" data-project="tuinmuur" tabindex="0" role="button" aria-label="Bekijk tuinmuur project">
+        <div class="open-hint">▶ BEKIJK PROJECT</div>
+        <div class="card-index">04</div>
+        <div class="card-image">
+          <img src="/" alt="Tuinmuur metselwerk" loading="lazy" />
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag--orange">Hout</span>
+            <span class="tag tag--red">Binnen</span>
+          </div>
+          <h3 class="card-title">Houten afwerking (tussengang)</h3>
+          <p class="card-desc">/</p>
+          <div class="card-meta"><span>📍 Kortrijk</span><span>⏱ 3 dagen</span></div>
+          <span class="card-link">BEKIJK FOTO'S <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="project-card project-card--featured" data-project="kozijnen" tabindex="0" role="button" aria-label="Bekijk kozijnen project">
+        <div class="open-hint">▶ BEKIJK PROJECT</div>
+        <div class="card-index">05</div>
+        <div class="card-image">
+          <img src="0.5Einde2.jpeg" alt="Kozijnen plaatsing" loading="lazy" />
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag--orange">Hout</span>
+            <span class="tag tag--red">Binnen</span>
+          </div>
+          <h3 class="card-title">Houten balustrade</h3>
+          <p class="card-desc">Het plaatsen van een houten balustrade op de zolder voor de veiligheid voor de kinderen.</p>
+          <div class="card-meta"><span>📍 Kortrijk</span><span>⏱ 1 dagen</span></div>
+          <span class="card-link">BEKIJK FOTO'S <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+            <article class="project-card project-card--featured" data-project="elektriciteit" tabindex="0" role="button" aria-label="Bekijk kozijnen project">
+        <div class="open-hint">▶ BEKIJK PROJECT</div>
+        <div class="card-index">06</div>
+        <div class="card-image">
+          <img src="/" alt="Kozijnen plaatsing" loading="lazy" />
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag--gray">Elektriciteit</span>
+            <span class="tag tag--red">Binnen</span>
+            <span class="tag tag--green">Buiten</span>
+          </div>
+          <h3 class="card-title">Elektriciteits werken</h3>
+          <p class="card-desc">/</p>
+          <div class="card-meta"><span>📍 Kortrijk</span><span>⏱ 5 dagen</span></div>
+          <span class="card-link">BEKIJK FOTO'S <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+            <article class="project-card project-card--featured" data-project="toilet" tabindex="0" role="button" aria-label="Bekijk kozijnen project">
+        <div class="open-hint">▶ BEKIJK PROJECT</div>
+        <div class="card-index">07</div>
+        <div class="card-image">
+          <img src="7.0eindresultaat.jpeg" alt="Kozijnen plaatsing" loading="lazy" />
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag--blue">Sanitair</span>
+            <span class="tag tag--red">Binnen</span>
+          </div>
+          <h3 class="card-title">Renovatie toilet</h3>
+          <p class="card-desc">Het plaatsen van een gangtoilet, nieuwe mozaïksteentjes en een nieuwe vloer.</p>
+          <div class="card-meta"><span>📍 Kortrijk</span><span>⏱ 2 dagen</span></div>
+          <span class="card-link">BEKIJK FOTO'S <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ REVIEWS ══ -->
+  <section id="reviews" class="reviews">
+    <div class="section-header">
+      <div class="section-tag">REVIEWS</div>
+      <h2 class="section-title">PLAATS EEN REVIEW!</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="reviews-grid" id="reviews-container">
+
+    </div>
+
+    <div class="review-form-wrap">
+      <h3 class="form-title">LAAT UW BEOORDELING ACHTER!</h3>
+      <div class="review-form">
+        <div class="form-group">
+          <label for="reviewer-name">UW NAAM</label>
+          <input type="text" id="reviewer-name" placeholder="bijv. Jan de Boer" />
+        </div>
+        <div class="form-group">
+          <label>UW BEOORDELING</label>
+          <div class="star-rating" id="star-rating">
+            <button class="star" data-value="1" type="button">★</button>
+            <button class="star" data-value="2" type="button">★</button>
+            <button class="star" data-value="3" type="button">★</button>
+            <button class="star" data-value="4" type="button">★</button>
+            <button class="star" data-value="5" type="button">★</button>
+          </div>
+          <span class="star-label" id="star-label">Kies een beoordeling</span>
+        </div>
+        <div class="form-group">
+          <label for="reviewer-text">UW ERVARING</label>
+          <textarea id="reviewer-text" rows="4" placeholder="Vertel anderen over uw ervaring..."></textarea>
+        </div>
+        <button class="btn-primary" id="submit-review" type="button">REVIEW PLAATSEN ›</button>
+        <p class="form-message" id="form-message"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ OVER MIJ ══ -->
+  <section id="over-mij" class="about">
+    <div class="about-bg-text">VAKMAN</div>
+    <div class="about-container">
+      <div class="about-visual">
+        <div class="about-frame">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <div class="about-avatar">
+            <span class="avatar-emoji">👷</span>
+            <div class="avatar-ring"></div>
+          </div>
+        </div>
+        <div class="about-badge"><strong>30+</strong><span>Jaar Ervaring</span></div>
+      </div>
+      <div class="about-content">
+        <div class="section-tag">WIE BEN IK?</div>
+        <h2 class="section-title">HALLO, IK BEN<br><span class="accent">Youssef Haddad</span></h2>
+        <div class="about-text">
+          <p>Ik ben een allround klusjesman uit Kortrijk met meer dan <strong>30 jaar ervaring</strong> in Kinlys group NV en allerhande klussen van hout tot elektriciteit.</p>
+          <p>Na mijn opleiding in houtbewerking heb ik jaren gewerkt bij Kinlys group NV. Recent ben ik begonnen als productieverantwoordelijke bij Biervliet NV. In mijn vrije tijd hou ik ervan thuis te klussen en veel werkjes te doen.</p>
+          <p>Of het nu gaat om een lekkende kraan, een omheining of een kabeltje trekken — ik pak het vakkundig aan.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact" class="contact">
+    <div class="contact-wrap">
+      <div class="contact-text">
+        <div class="section-tag">SOCIALS</div>
+        <h2 class="section-title">VIND MIJ OP<br><span class="accent">VERSCHILLENDE PLATFORMEN!</span></h2>
+        <p>Vind mij op verschillende platformen zoals: TIKTOK, FACEBOOK, INSTAGRAM EN YOUTUBE.</p>
+        <div class="contact-info">
+          <span class="contact-item">📍 Kortrijk</span>
+        </div>
+      </div>
+      <div class="contact-box">
+        <h3>SOCIALS</h3>
+        <p>Klik op één van de knoppen om naar mijn social te gaan.</p>
+        <a href="https://www.facebook.com/share/18BvHV6vMo/" class="btn-primary btn-full" target="_blank"> Facebook</a>
+        <a href="https://www.instagram.com/youssefhayabusa?igsh=MWJhb3hhaDVmdmw0dg==" class="btn-primary btn-full" target="_blank"> Instagram</a>
+        <a href="https://www.linkedin.com/in/youssef-haddad-7328636b" class="btn-primary btn-full" target="_blank"> LinkedIn</a>
+        <a href="https://www.tiktok.com/@djseppe2" class="btn-primary btn-full" target="_blank"> Tiktok</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span>🔨</span>
+        <span class="footer-name">Klusjes<em>Haddad</em></span>
+        <p>Vakmanschap met aandacht.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#projecten">Projecten</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#over-mij">Wie ben ik</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 Youssef Haddad — Hobbysite met projecten in privé</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
